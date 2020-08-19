@@ -1,6 +1,17 @@
 #include "tools.hpp"
 
 /**
+ * 
+ * 
+ */
+void VectorPrint(const vector<int> &v)
+{
+    for (auto n : v)
+        cout << n << " ";
+    cout << endl;
+}
+
+/**
  * leetcode for singly-linked list operation.
  */
 ListNode *ListCreate(const vector<int> &vec)

@@ -7,8 +7,12 @@
 #include <cstdarg>
 #include <string>
 #include <vector>
-#include <queue>
 #include <list>
+#include <queue>
+#include <stack>
+#include <deque>
+#include <map>
+#include <set>
 #include <algorithm>
 #include <cmath>
 
@@ -36,6 +40,8 @@ struct TreeNode
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
+
+void VectorPrint(const vector<int> &v);
 
 ListNode *ListCreate(const vector<int> &vec);
 void ListDestroy(ListNode *head);
