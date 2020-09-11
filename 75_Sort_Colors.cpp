@@ -46,5 +46,6 @@ int main(int argc, char *argv[])
         cout << v << " ";
     cout << endl;
 
+    delete pS;
     return 0;
 }

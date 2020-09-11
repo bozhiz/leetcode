@@ -59,5 +59,6 @@ int main(int argc, char *argv[])
     cout << pS->findKthLargest(v1, 2) << endl;
     // cout << v1 << endl;
 
+    delete pS;
     return 0;
 }

@@ -7,7 +7,12 @@
 void VectorPrint(const vector<int> &v)
 {
     for (auto n : v)
-        cout << n << " ";
+    {
+        if (n != INT_MAX)
+            cout << n << " ";
+        else
+            cout << "# ";
+    }
     cout << endl;
 }
 
@@ -54,8 +59,10 @@ void ListPrint(ListNode *head)
     ListNode *curr = head;
     while (curr)
     {
-        cout << curr->val << " -> ";
+        cout << curr->val;
         curr = curr->next;
+        if (curr)
+            cout << " -> ";
     }
     cout << endl;
 }
@@ -63,45 +70,6 @@ void ListPrint(ListNode *head)
 /**
  * leetcode binary tree operation
  */
-// TreeNode *TreeCreate(const vector<int> &vec)
-// {
-//     size_t size = vec.size();
-//     TreeNode **treeArr = new TreeNode *[size];
-//     for (size_t i = 0; i < size; i++)
-//     {
-//         if (INT_MAX == vec[i])
-//         {
-//             treeArr[i] = nullptr;
-//         }
-//         else
-//         {
-//             treeArr[i] = new TreeNode(vec[i]);
-//         }
-//     }
-
-//     size_t curr = 1;
-//     for (size_t i = 0; i < size; i++)
-//     {
-//         if (!treeArr[i])
-//         {
-//             continue;
-//         }
-
-//         if (curr < size)
-//         {
-//             treeArr[i]->left = treeArr[curr++];
-//         }
-//         if (curr < size)
-//         {
-//             treeArr[i]->right = treeArr[curr++];
-//         }
-//     }
-
-//     TreeNode *root = treeArr[0];
-//     delete[] treeArr;
-//     return root;
-// }
-
 TreeNode *TreeCreate(const vector<int> &vec)
 {
     size_t size = vec.size();

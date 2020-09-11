@@ -1,22 +1,28 @@
-#include <iostream>  
+#include <iostream>
 #include <set>
 #include <algorithm>
+#include <memory>
 
-using namespace std; 
+using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int lengthOfLongestSubstring(string s) {
+    int lengthOfLongestSubstring(string s)
+    {
         int i = 0, j = 0, maxLen = 0;
         set<char> v;
-        
-        while(i<s.size() && j<s.size()) {
+
+        while (i < s.size() && j < s.size())
+        {
             //cout<<s[i]<<endl;
-            if(v.find(s[i]) == v.end()) {
+            if (v.find(s[i]) == v.end())
+            {
                 v.insert(s[i++]);
                 maxLen = max((int)v.size(), maxLen);
             }
-            else {
+            else
+            {
                 /*
                 std::cout << "myset contains:";
                 for (std::set<char>::iterator it=v.begin(); it!=v.end(); ++it)
@@ -37,9 +43,9 @@ int main(int argc, char *argv[])
     //string s("abcabcbb");
     string s("dvdf");
     //string s("fjslfjsl3423l42j3fls32");
-    Solution *pS = new Solution();
+    unique_ptr<Solution> pS(new Solution());
 
-	cout << pS->lengthOfLongestSubstring(s) << endl;
+    cout << pS->lengthOfLongestSubstring(s) << endl;
 
-	return 0;
+    return 0;
 }

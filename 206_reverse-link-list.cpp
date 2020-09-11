@@ -1,60 +1,33 @@
-// C++ program to reverse a linked list using two pointers. 
-#include <stdio.h>
-#include <stdlib.h>
-  
-/* Link list node */
-struct Node { 
-    int data; 
-    struct Node* next; 
-}; 
-  
+// C++ program to reverse a linked list using two pointers.
+#include "tools.hpp"
+
 /* Function to reverse the linked list using 2 pointers */
-void reverse(struct Node** head_ref) 
-{ 
-    struct Node* current = *head_ref; 
-    struct Node* next; 
-    while (current->next != NULL) { 
-        next = current->next; 
-        current->next = next->next; 
-        next->next = (*head_ref); 
-        *head_ref = next; 
-    } 
-} 
-  
-/* Function to push a node */
-void push(struct Node** head_ref, int new_data) 
-{ 
-    struct Node* new_node = malloc(sizeof(struct Node)); 
-    new_node->data = new_data; 
-    new_node->next = (*head_ref); 
-    (*head_ref) = new_node; 
-} 
-  
-/* Function to print linked list */
-void printList(struct Node* head) 
-{ 
-    struct Node* temp = head; 
-    while (temp != NULL) { 
-        printf("%d  ", temp->data); 
-        temp = temp->next; 
-    } 
-} 
-  
+void reverse(struct ListNode **head_ref)
+{
+    struct ListNode *current = *head_ref;
+    struct ListNode *next;
+    while (current->next != NULL)
+    {
+        next = current->next;
+        current->next = next->next;
+        next->next = (*head_ref);
+        *head_ref = next;
+    }
+}
+
 /* Driver program to test above function*/
-int main() 
-{ 
-    /* Start with the empty list */
-    struct Node* head = NULL; 
-  
-    push(&head, 20); 
-    push(&head, 4); 
-    push(&head, 15); 
-    push(&head, 85); 
-  
-    printf("Given linked list\n"); 
-    printList(head); 
-    reverse(&head); 
-    printf("\nReversed Linked list \n"); 
-    printList(head); 
-    return 0; 
-} 
+int main()
+{
+    vector<int> v({20, 4, 15, 85});
+    struct ListNode *head = ListCreate(v);
+
+    printf("Given linked list\n");
+    ListPrint(head);
+    reverse(&head);
+    printf("Reversed Linked list\n");
+    ListPrint(head);
+
+    //Should delete list here
+    ListDestroy(head);
+    return 0;
+}

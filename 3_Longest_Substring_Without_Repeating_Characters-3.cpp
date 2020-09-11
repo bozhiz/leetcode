@@ -1,29 +1,34 @@
-#include <iostream>  
+#include <iostream>
 #include <map>
 #include <algorithm>
 
-using namespace std; 
+using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int lengthOfLongestSubstring(string s) {
+    int lengthOfLongestSubstring(string s)
+    {
         /*
          * record each characters last position,
          * moving sliding window head faster by skiping
          */
         int i = 0, j = 0, maxLen = 0;
         map<char, int> m;
-        
-        for(i=j=0; i<s.size(); i++) {
-            if(m.find(s[i]) == m.end()) {
+
+        for (i = j = 0; i < s.size(); i++)
+        {
+            if (m.find(s[i]) == m.end())
+            {
                 m.insert(pair<char, int>(s[i], i));
-                maxLen = max(i-j+1, maxLen);
+                maxLen = max(i - j + 1, maxLen);
             }
-            else {
-                if(m[s[i]]>=j)
-                    j = m[s[i]]+1;
+            else
+            {
+                if (m[s[i]] >= j)
+                    j = m[s[i]] + 1;
                 m[s[i]] = i;
-                maxLen = max(i-j+1, maxLen);
+                maxLen = max(i - j + 1, maxLen);
             }
         }
 
@@ -39,7 +44,8 @@ int main(int argc, char *argv[])
     Solution *pS = new Solution();
     string s("tmmzuxt");
 
-	cout << pS->lengthOfLongestSubstring(s) << endl;
+    cout << pS->lengthOfLongestSubstring(s) << endl;
 
-	return 0;
+    delete pS;
+    return 0;
 }

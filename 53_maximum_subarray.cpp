@@ -29,5 +29,6 @@ int main(int argc, char *argv[])
     cout << pS->maxSubArray(v1) << endl;
     cout << pS->maxSubArray(v2) << endl;
 
+    delete pS;
     return 0;
 }

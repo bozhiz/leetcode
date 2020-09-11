@@ -51,5 +51,6 @@ int main(int argc, char *argv[])
     cout << pS->longestPalindrome("abcdcba343abcdcba") << endl;
     cout << pS->longestPalindrome("cbbd") << endl;
 
+    delete pS;
     return 0;
 }

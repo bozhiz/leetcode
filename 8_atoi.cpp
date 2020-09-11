@@ -61,5 +61,6 @@ int main(int argc, char *argv[])
     cout << pS->myAtoi("-2147483649") << endl;
     cout << pS->myAtoi("  +004500") << endl;
 
+    delete pS;
     return 0;
 }

@@ -66,5 +66,6 @@ int main(int argc, char *argv[])
     TreePrint(t);
     TreeDestroy(t);
 
+    delete pS;
     return 0;
 }

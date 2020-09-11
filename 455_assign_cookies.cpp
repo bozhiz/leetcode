@@ -34,5 +34,6 @@ int main(int argc, char *argv[])
     cout << pS->findContentChildren(g1, s1) << endl;
     cout << pS->findContentChildren(g2, s2) << endl;
 
+    delete pS;
     return 0;
 }

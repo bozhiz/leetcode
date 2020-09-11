@@ -41,5 +41,6 @@ int main(int argc, char *argv[])
 
     cout << pS->lengthOfLongestSubstring(s) << endl;
 
+    delete pS;
     return 0;
 }

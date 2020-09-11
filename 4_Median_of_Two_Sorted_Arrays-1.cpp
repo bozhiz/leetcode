@@ -86,5 +86,6 @@ int main(int argc, char *argv[])
 
     cout << pS->findMedianSortedArrays(v1, v2) << endl;
 
+    delete pS;
     return 0;
 }
