@@ -15,13 +15,13 @@ public:
             for (int j = 0; i - j >= 0 && i + j < n && s[i - j] == s[i + j]; j++)
             {
                 cnt++;
-                cout << " odd: i: " << i << ", j: " << j << ", cnt: " << cnt << endl;
+                // cout << " odd: i: " << i << ", j: " << j << ", cnt: " << cnt << endl;
             }
             //even
             for (int j = 0; i - 1 - j >= 0 && i + j < n && s[i - 1 - j] == s[i + j]; j++)
             {
                 cnt++;
-                cout << "even: i: " << i << ", j: " << j << ", cnt: " << cnt << endl;
+                // cout << "even: i: " << i << ", j: " << j << ", cnt: " << cnt << endl;
             }
         }
         return cnt;
